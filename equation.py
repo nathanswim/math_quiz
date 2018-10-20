@@ -11,11 +11,4 @@ class Equation(object):
     def RHS(self):
         return self.rhs
     def to_s(self):
-        ops = {
-            Operation.Addition: "+",
-            Operation.Subtraction: "-",
-            Operation.Muliplication: "x",
-            Operation.Division: "÷"
-        }
-        op = ops.get(self.op, "?")
-        return str(self.lhs) + ' ' + op + ' ' + str(self.rhs) + ' = '
+        return str(self.lhs) + ' ' + self.op.to_s() + ' ' + str(self.rhs) + ' = '

@@ -1,0 +1,16 @@
+﻿
+user-options:
+  - name: Ronan 6-8
+    operation: 1
+    lhs_min: 6
+    lhs_max: 8
+    rhs_min: 1
+    rhs_max: 12
+    no_questions: 100
+  - name: Rhiannon 2-3
+    operation: 1
+    lhs_min: 6
+    lhs_max: 8
+    rhs_min: 1
+    rhs_max: 12
+    no_questions: 100
