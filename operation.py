@@ -7,6 +7,15 @@ class Operation(object):
     def to_s(self):
         return self.op
     @staticmethod
+    def byNumber(value):
+        op_choices = {
+            1: Operation.multiplication(),
+            2: Operation.addition(),
+            3: Operation.substraction(),
+            4: Operation.division()
+        }
+        return op_choices.get(value, Operation.multiplication())
+    @staticmethod
     def multiplication():
         return MultiplicationOperation()
     @staticmethod

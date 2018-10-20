@@ -9,8 +9,8 @@ user-options:
     no_questions: 100
   - name: Rhiannon 2-3
     operation: 1
-    lhs_min: 6
-    lhs_max: 8
+    lhs_min: 2
+    lhs_max: 3
     rhs_min: 1
-    rhs_max: 12
+    rhs_max: 9
     no_questions: 100

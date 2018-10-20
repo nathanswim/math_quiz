@@ -7,6 +7,7 @@ from promptuser import PromptUser
 
 """print list of 12 times table"""
 
+print("\n\n")
 prompter = PromptUser()
 prompter.test_yaml()
 
