@@ -7,42 +7,38 @@ def create_html(list_of_questions):
     result += "<html>\n" 
     result += "<head>\n"
     result += "<title>Random List of Questions</title>\n"
-    result += "<style>"
-    result += "td#q {"
-    result += "    vertical-align: middle;"
-    result += "}"
-    result += "td#a {"
-    result += "    border: 1px solid black;"
-    result += "    width: 50px;"
-    result += "}"
-    result += ""
-    result += "</style>"
+    result += "<style>\n"
+    result += "td#l, td#r {\n"
+    result += "    vertical-align: middle;\n"
+    result += "    text-align: center;\n"
+    result += "    width: 25px;\n"
+    result += "}\n"
+    result += "td#o, td#q {\n"
+    result += "    vertical-align: middle;\n"
+    result += "    text-align: center;\n"
+    result += "    width: 15px;\n"
+    result += "}\n"
+    result += "td#a {\n"
+    result += "    border: 1px solid black;\n"
+    result += "    width: 50px;\n"
+    result += "}\n"
+    result += "</style>\n"
     result += "</head>\n"
     result += "<body>\n"
+    result += "<p>\n"
+    result += "Name: _______________________________ Date: _______________ Time: _______________\n"
+    result += "</p>\n"
     result += '<table style="font-size: x-large">\n'
     number_of_rows = len(list_of_questions) // 4
     if len(list_of_questions) % 4 > 0:
         number_of_rows += 1
 
     for row_number in range(0,number_of_rows):
-        index = row_number * 4
-        cell_1 = ""
-        cell_2 = ""
-        cell_3 = ""
-        cell_4 = ""
-        if len(list_of_questions) > index:
-            cell_1 = getEquationAsString(list_of_questions[index])
-        if len(list_of_questions) > index + 1:
-            cell_2 = getEquationAsString(list_of_questions[index + 1])
-        if len(list_of_questions) > index + 2:
-            cell_3 = getEquationAsString(list_of_questions[index + 2]) 
-        if len(list_of_questions) > index + 3:
-            cell_4 = getEquationAsString(list_of_questions[index + 3]) 
         result += '<tr>'
-        result += '<td id="q">' + cell_1 + '</td><td id="a"/><td>&nbsp;</td>'
-        result += '<td id="q">' + cell_2 + '</td><td id="a"/><td>&nbsp;</td>'
-        result += '<td id="q">' + cell_3 + '</td><td id="a"/><td>&nbsp;</td>'
-        result += '<td id="q">' + cell_4 + '</td><td id="a"/><td>&nbsp;</td>'
+        for col_number in range(0, 4):
+            index = row_number * 4 + col_number
+            equation = list_of_questions[index]
+            result += '<td id="l">' + equation.LHS() + '</td><td id="o">' + equation.Operation().op + '</td><td id="r">' + equation.RHS() + '</td><td id="q">=</td><td id="a"/><td id="s">&nbsp;</td>'
         result += '</tr>\n'
     result += "</table>\n</body>\n</html>\n"
     return result
@@ -50,4 +46,5 @@ def create_html(list_of_questions):
 def getEquationAsString(eq):
     q = eq or Operation.empty()
     return q.to_s()
+
 

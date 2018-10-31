@@ -1,16 +1,16 @@
 ﻿
 user-options:
-  - name: Ronan 6-8
+  - name: Ronan 6-8 x 6-12
     operation: 1
     lhs_min: 6
     lhs_max: 8
     rhs_min: 1
     rhs_max: 12
     no_questions: 100
-  - name: Rhiannon 2-3
+  - name: Rhiannon 2-3 x 1-6
     operation: 1
     lhs_min: 2
     lhs_max: 3
     rhs_min: 1
-    rhs_max: 9
+    rhs_max: 6
     no_questions: 100
